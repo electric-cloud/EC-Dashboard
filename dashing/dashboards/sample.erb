@@ -1,3 +1,13 @@
+<script type='text/javascript'>
+$(function() {
+  $('li').live('click', function(e){
+    var widget = $(this).find('.widget');
+    var url = widget.data('url');
+    window.location = url;
+  });
+});
+</script>
+
 <% content_for :title do %>ElectricFlow Release Summary<% end %>
 <div class="gridster">
   <ul>
@@ -10,7 +20,7 @@
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
-      <div data-id="projects" data-view="List" data-unordered="true" data-title="projects" data-moreinfo="# of times said around the office"></div>
+      <div data-id="projects" data-view="Text" data-url="https://flow/commander/link/projects?s=Projects" data-title="projects"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
