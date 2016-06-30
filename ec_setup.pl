@@ -16,7 +16,7 @@ print $fh "Current directory: $dir\n";
 if ($promoteAction eq 'promote') {
 	local $/ = undef;
 	if(defined $ENV{'QUERY_STRING'}) { # Promotion through UI
-		exec "cd ../../$pluginName/dashing;(dashing start &> /tmp/dashing.log) &" 
+		system "cd ../../$pluginName/dashing && dashing start > /tmp/dashing.log 2>&1  &" 
 			or print $fh "couldn't exec dashing: $!";
 	} else {  # Promotion from the command line
 	}
