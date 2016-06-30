@@ -1,0 +1,10 @@
+Install Dashing on flow-demo machine
+------------------------------------
+vagrant ssh
+sudo su - flow
+sudo apt-get -y install ruby-dev
+sudo apt-get -y install g++
+sudo gem install bundle
+sudo gem install dashing
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs
