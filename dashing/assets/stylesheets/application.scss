@@ -256,3 +256,14 @@ h3 {
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
+.drag-handle {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  z-index: 99;
+  opacity: 0.3;
+}
+
+.drag-handle:hover {
+  opacity: 1;
+}
