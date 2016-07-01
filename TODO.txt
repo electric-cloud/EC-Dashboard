@@ -1,3 +1,15 @@
+[x] Component inventory 
 Number of Deployments
 
-Port 8433
+
+Release timeline
+REST through SSL
+- certificate
+- secure credentials
+
+Multiple plugins
+- Naming, project hierarchy
+- port numbers
+- [x] daemonize and kill pid on demotion
+- plugin webpage redirect to dashboard
+- Add link to webpage in help document

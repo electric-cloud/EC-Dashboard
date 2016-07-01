@@ -16,13 +16,16 @@ print $fh "Current directory: $dir\n";
 if ($promoteAction eq 'promote') {
 	local $/ = undef;
 	if(defined $ENV{'QUERY_STRING'}) { # Promotion through UI
-		system "cd ../../$pluginName/dashing && dashing start > /tmp/dashing.log 2>&1  &" 
-			or print $fh "couldn't exec dashing: $!";
+		system "cd ../../$pluginName/dashing && dashing start -d" or
+			print $fh "couldn't exec dashing: $!";
+		# logfile log/thin.log
 	} else {  # Promotion from the command line
 	}
 } elsif ($promoteAction eq 'demote') {
 	if(defined $ENV{'QUERY_STRING'}) { # Demotion through UI
-		`killall bundle`;
+		# PID tmp/pids/thin.pid
+		system "kill `cat ../../$pluginName/dashing/tmp/pids/thin.pid`" or
+			print $fh "Couldn't kill 'thin' process";
 	} else {  # Promotion from the command line
 	}
 }
