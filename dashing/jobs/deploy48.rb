@@ -1,5 +1,5 @@
 applications = []
-projects = {"SF"=>"DEV", "Heat Clinic"=>"HC DEV", "bogus"=>"BOGUS DEV", "On line bank Release"=>"Banking-DEV"}
+projects = {"SF"=>"DEV", "Default"=>"HCTEST", "bogus"=>"BOGUS DEV", "On line bank Release"=>"Banking-DEV"}
 
 SCHEDULER.every '5s', :first_in => 0 do |job|
 	totalDeployments = 0
