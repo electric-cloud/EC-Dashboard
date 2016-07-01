@@ -1,7 +1,12 @@
 <html>
 	<head>
 		<title>EC-Dashboard</title>
-		<meta http-equiv="refresh" content="0; url=http://flow:3030" />
+		<script language="JavaScript">
+			// <meta http-equiv="refresh" content="0; url=:3030" />
+			document.write(
+			  '<meta http-equiv="refresh" content="0; url=http://' + window.location.hostname + ':3030' + '" />' );
+		</script>
+		
 	</head>
-	Testing EC-Dashboard...
+	Loading Dashboard...
 </html>
