@@ -2,12 +2,12 @@ use Cwd;
 use Data::Dumper;
 use File::Spec;
 
-my $portNumber = 3031
+my $portNumber = 3030;
 
 my $dir = getcwd;
 my $logfile ="";
 if(defined $ENV{'QUERY_STRING'}) { # Promotion through UI
-	$logfile = "/tmp/log.txt";
+	$logfile = "../../$pluginName/ec_setup.log";
 } else {
 	$logfile = "$ENV{'TEMP'}/log.txt";
 }
@@ -18,16 +18,18 @@ print $fh "Current directory: $dir\n";
 if ($promoteAction eq 'promote') {
 	local $/ = undef;
 	if(defined $ENV{'QUERY_STRING'}) { # Promotion through UI
-		system "cd ../../$pluginName/dashing && dashing -d -p $portNumber start" or
-			print $fh "couldn't exec dashing: $!";
+		my $dashingCommand = "cd ../../$pluginName/dashing && dashing start -d -p $portNumber &> /dev/null";
+		print $fh "Starting dashing: $dashingCommand\n";
 		# logfile log/thin.log
+		system $dashingCommand or
+			print $fh "Couldn't exec dashing: $!\n";
 	} else {  # Promotion from the command line
 	}
 } elsif ($promoteAction eq 'demote') {
 	if(defined $ENV{'QUERY_STRING'}) { # Demotion through UI
 		# PID tmp/pids/thin.pid
 		system "kill `cat ../../$pluginName/dashing/tmp/pids/thin.pid`" or
-			print $fh "Couldn't kill 'thin' process";
+			print $fh "Couldn't kill 'thin' process\n";
 	} else {  # Promotion from the command line
 	}
 }

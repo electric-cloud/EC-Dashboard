@@ -10,10 +10,12 @@
 use Data::Dumper;
 use File::Spec;
 
+my $portNumber = 3030;
+
 my $dir = getcwd;
 my $logfile ="";
 if(defined $ENV{'QUERY_STRING'}) { # Promotion through UI
-	$logfile = "/tmp/log.txt";
+	$logfile = "../../$pluginName/ec_setup.log";
 } else {
 	$logfile = "$ENV{'TEMP'}/log.txt";
 }
@@ -24,13 +26,18 @@ print $fh "Current directory: $dir\n";
 if ($promoteAction eq 'promote') {
 	local $/ = undef;
 	if(defined $ENV{'QUERY_STRING'}) { # Promotion through UI
-		system "cd ../../$pluginName/dashing &amp;&amp; dashing start &gt; /tmp/dashing.log 2&gt;&amp;1  &amp;" 
-			or print $fh "couldn't exec dashing: $!";
+		my $dashingCommand = "cd ../../$pluginName/dashing &amp;&amp; dashing start -d -p $portNumber &amp;&gt; /dev/null";
+		print $fh "Starting dashing: $dashingCommand\n";
+		# logfile log/thin.log
+		system $dashingCommand or
+			print $fh "Couldn't exec dashing: $!\n";
 	} else {  # Promotion from the command line
 	}
 } elsif ($promoteAction eq 'demote') {
 	if(defined $ENV{'QUERY_STRING'}) { # Demotion through UI
-		`killall bundle`;
+		# PID tmp/pids/thin.pid
+		system "kill `cat ../../$pluginName/dashing/tmp/pids/thin.pid`" or
+			print $fh "Couldn't kill 'thin' process\n";
 	} else {  # Promotion from the command line
 	}
 }
