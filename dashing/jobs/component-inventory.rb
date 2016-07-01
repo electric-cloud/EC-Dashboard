@@ -3,7 +3,7 @@ hrows = [
 ]
 
 
-SCHEDULER.every '5s', :first_in => 0 do |job|
+SCHEDULER.every '20s', :first_in => 0 do |job|
 	rowData = []
 	envs= ["DEV", "QA", "PROD"]
 	envs.each do |env|

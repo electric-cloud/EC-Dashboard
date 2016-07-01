@@ -1,5 +1,5 @@
 [x] Component inventory 
-Number of Deployments
+[x] Number of Deployments
 
 
 Release timeline
@@ -11,5 +11,8 @@ Multiple plugins
 - Naming, project hierarchy
 - [x] port numbers
 - [x] daemonize and kill pid on demotion
-- plugin webpage redirect to dashboard
+- [x] plugin webpage redirect to dashboard
 - Add link to webpage in help document
+
+Documentation
+
