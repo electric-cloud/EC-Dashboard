@@ -2,6 +2,8 @@ use Cwd;
 use Data::Dumper;
 use File::Spec;
 
+my $portNumber = 3031
+
 my $dir = getcwd;
 my $logfile ="";
 if(defined $ENV{'QUERY_STRING'}) { # Promotion through UI
@@ -16,7 +18,7 @@ print $fh "Current directory: $dir\n";
 if ($promoteAction eq 'promote') {
 	local $/ = undef;
 	if(defined $ENV{'QUERY_STRING'}) { # Promotion through UI
-		system "cd ../../$pluginName/dashing && dashing start -d" or
+		system "cd ../../$pluginName/dashing && dashing -d -p $portNumber start" or
 			print $fh "couldn't exec dashing: $!";
 		# logfile log/thin.log
 	} else {  # Promotion from the command line

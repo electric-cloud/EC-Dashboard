@@ -9,7 +9,7 @@ REST through SSL
 
 Multiple plugins
 - Naming, project hierarchy
-- port numbers
+- [x] port numbers
 - [x] daemonize and kill pid on demotion
 - plugin webpage redirect to dashboard
 - Add link to webpage in help document
