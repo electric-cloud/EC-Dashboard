@@ -13,7 +13,7 @@ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-## Create a custom dashboard from EC-Dashboard template
+## Create a custom dashboard plugin from EC-Dashboard template
 1. Copy directory, e.g., cp -r EC-Dashboard MyDashboard
 2. Decide on a version number, e.g., 1.0, so plugin name is MyDashboard-1.0
 3. Edit META-INF/plugin.xml with this information
