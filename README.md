@@ -4,12 +4,14 @@ This plugin provides a template for creating custom dashboards for Electric Flow
 ## Install Dashing
 The following instructions for installing Dashing are for Ubuntu
 
-```sudo apt-get -y install ruby-dev
+```bash
+sudo apt-get -y install ruby-dev
 sudo apt-get -y install g++
 sudo gem install bundle
 sudo gem install dashing
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-sudo apt-get install -y nodejs```
+sudo apt-get install -y nodejs
+```
 
 ## Create a custom dashboard from EC-Dashboard template
 1. Copy directory, e.g., cp -r EC-Dashboard MyDashboard
