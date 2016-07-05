@@ -15,4 +15,11 @@ Multiple plugins
 - Add link to webpage in help document
 
 Documentation
+[] Create new plugin from template
 
+
+Merge with EC-Dashing?
+
+[] Change name of dashboard
+[x] Add help.xml with link htdocs/index.html
+[] Update redirect port number

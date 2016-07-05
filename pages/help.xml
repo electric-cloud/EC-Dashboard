@@ -1,6 +1,12 @@
 <componentContainer>
-  <title>PluginLit Help</title>
-  <h2>PluginLite Example Help</h2>
+  <title>EC-Dashboard</title>
+  <h2>EC-Dashboard Template Help</h2>
   <h3>Overview</h3>
-  <p>This plugin is a template for plugins whose content is defined by DSL code.
+  <p>The plugin is a template for creating custom dashboards with Dashing</p>
+  <pre>
+  </pre>
+  <p>This plugin has the following pages:</p>
+  <p>
+    <a href="../../plugins/EC-Dashboard-1.0/index.html">EC-Dashboard</a>
+  </p>
 </componentContainer>

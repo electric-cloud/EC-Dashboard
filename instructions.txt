@@ -8,3 +8,24 @@ sudo gem install bundle
 sudo gem install dashing
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-get install -y nodejs
+
+
+Edit help.xml - plugin name
+Port number
+- Edit ec_setup.sh
+- Edit htdocs/index.html
+(See createJar.ps1 for things to update)
+
+Creating a custom dashboard from EC-Dashboard template
+Copy directory, e.g., cp -r EC-Dashboard MyDashboard
+Decide on a version number, e.g., 1.0, so plugin name is MyDashboard-1.0
+- Edit META-INF/plugin.xml with this information
+- Edit META-INF/project.xml to select a port number for your plugin, my $portNumber = 3030;
+- htdocs/index.html to use this port number
+- Edit htdocs/help.xml to include your plugin name in the link to index.html
+Create your custom dashboard and jobs in the dashing directory
+zip up the directories
+Change extension to .jar
+Import plugin and promote
+Use the link in the help to open the dashboard
+
