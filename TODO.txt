@@ -15,7 +15,7 @@ Multiple plugins
 - Add link to webpage in help document
 
 Documentation
-[] Create new plugin from template
+[x] Create new plugin from template
 
 
 Merge with EC-Dashing?
