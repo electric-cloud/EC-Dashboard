@@ -21,7 +21,7 @@ sudo apt-get install -y nodejs
 5. htdocs/index.html to use this port number
 6. Edit htdocs/help.xml to include your plugin name in the link to index.html
 7. Create your custom dashboard and jobs in the dashing directory
-8. Zip up the directories (dsl, META-INF, pages and any others you have added)
+8. Zip up the directories (dashing, htdocs, META-INF, pages and any others you have added)
 9. Change extension to .jar
 10. Import plugin and promote
 11. Use the link in the help to open the dashboard
