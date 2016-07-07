@@ -16,7 +16,7 @@ sudo apt-get install -y nodejs
 ## Create a custom dashboard plugin from EC-Dashboard template
 1. Copy directory, e.g., cp -r EC-Dashboard MyDashboard
 2. Decide on a version number, e.g., 1.0, so plugin name is MyDashboard-1.0
-3. Edit META-INF/plugin.xml with this information
+3. Edit META-INF/plugin.xml (key and version) and META-INF/project.xml (projectName) with this information
 4. Edit META-INF/project.xml to select a port number for your plugin, my $portNumber = 3030;
 5. htdocs/index.html to use this port number
 6. Edit htdocs/help.xml to include your plugin name in the link to index.html
